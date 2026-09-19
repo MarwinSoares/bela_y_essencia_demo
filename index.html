@@ -72,8 +72,18 @@ body {
   -webkit-text-stroke:1px #cfaaa0; 
 }
 .service-card { 
+  min-width:0;
   min-height:145px; 
+  overflow:hidden;
   transition:transform .25s ease, box-shadow .25s ease; 
+}
+.service-card h3 {
+  min-width:0;
+  max-width:100%;
+  line-height:1.16;
+  overflow-wrap:anywhere;
+  word-break:normal;
+  hyphens:auto;
 }
 .service-card:hover { 
   transform:translateY(-5px); 
@@ -121,7 +131,11 @@ body {
   .hero-arch { border-radius:7rem 7rem 1.2rem 1.2rem; }
   .hero-arch img { min-height:350px; }
   .mobile-cta { display:flex; }
-  body { padding-bottom:76px; }
+  body { padding-bottom:96px; }
+  .services-section { padding-bottom:8rem !important; }
+  .services-grid { gap:.75rem; }
+  .service-card { min-height:132px; padding:1rem !important; }
+  .service-card h3 { font-size:1rem !important; line-height:1.15; }
 }
 
 
@@ -153,14 +167,11 @@ body {
 }
 @media (max-width:767px) {
   .whatsapp-float {
-    right: 18px;
-    bottom: 90px;
-    width: 54px;
-    height: 54px;
+    display: none;
   }
-  .whatsapp-float svg {
-    width: 28px;
-    height: 28px;
+
+  .mobile-cta {
+    bottom: calc(16px + env(safe-area-inset-bottom));
   }
 }
 </style> 
@@ -200,14 +211,14 @@ body {
       </div>
      </div>
     </section>
-    <section class="w-full bg-[#f6eee8] px-5 md:px-10 py-20 md:py-28">
+    <section class="services-section w-full bg-[#f6eee8] px-5 md:px-10 py-20 md:py-28">
      <div class="max-w-7xl mx-auto">
       <div class="max-w-2xl">
        <p data-template-id="services-eyebrow" class="canva-text eyebrow" style="color: rgb(181, 138, 93); font-weight: 700; font-style: normal; font-size: 16px;">Tratamentos</p>
        <h2 data-template-id="services-title" class="canva-text serif mt-4 text-[clamp(2.4rem,4vw,4.2rem)] leading-tight" style="color: rgb(65, 54, 49); font-weight: 600; font-style: normal; font-size: 24px;">Seu ritual de cuidado, do seu jeito.</h2>
        <p data-template-id="services-description" class="canva-text mt-5 leading-7 text-[#6e5d55]" style="color: rgb(110, 93, 85); font-weight: 400; font-style: normal; font-size: 16px;">Tecnologia, técnica e sensibilidade em protocolos cuidadosamente pensados para os seus objetivos.</p>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mt-12">
+      <div class="services-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mt-12">
        <article data-template-id="service-card-1" class="canva-card service-card rounded-2xl p-5 flex flex-col justify-between" style="background: rgb(255, 253, 250);"><span class="text-[#b58a5d] text-xl">✦</span>
         <h3 data-template-id="service-name-1" class="canva-text serif mt-8 text-xl" style="color: rgb(65, 54, 49); font-weight: 600; font-style: normal; font-size: 19px;">Botox</h3>
        </article>
